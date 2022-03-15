@@ -46,3 +46,6 @@ export const RECIPIENT: T.Selects = [
     currency: CURRENCIES.PH,
   },
 ];
+
+export const URL: string =
+  "http://api.currencylayer.com/live?access_key=c3496e3b72c4325a0fd4ee717b12ff21&format=1";
