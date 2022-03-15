@@ -6,15 +6,15 @@ const useFetch = (url: string) => {
   useEffect(() => {
     const fetchData = async (url: string) => {
       try {
-        const res = await fetch(url);
-        const data = await res.json();
-        if (data) setData(data.quotes);
+        const res = await (await fetch(url)).json();
+        if (res) setData(res.quotes);
       } catch (err) {
         console.log(err);
       }
+      console.log("fetch");
     };
     data === null && fetchData(url);
-  }, [setData, url]);
+  }, [data, setData, url]);
 
   return data;
 };
