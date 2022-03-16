@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
+import * as T from "Types/index";
 
 const useFetch = (url: string) => {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<T.ExchangeData>(null);
 
   useEffect(() => {
     const fetchData = async (url: string) => {

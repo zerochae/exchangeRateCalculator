@@ -7,12 +7,7 @@
       "Utils/*": ["src/Utils/*"],
       "Styles/*": ["src/Styles/*"],
       "Types/*": ["src/Types/*"],
-      "Pages/*": ["src/Pages/*"],
-      "Store/*": ["src/Store/*"],
-      "Actions/*": ["src/Modules/Actions/*"],
-      "Reducers/*": ["src/Modules/Reducers/*"],
-      "Modules/*": ["src/Modules/*"],
-      "Assets/*": ["src/Assets/*"]
+      "Pages/*": ["src/Pages/*"]
     }
   }
 }
