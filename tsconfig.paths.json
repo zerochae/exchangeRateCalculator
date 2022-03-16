@@ -11,7 +11,7 @@
       "Store/*": ["src/Store/*"],
       "Actions/*": ["src/Modules/Actions/*"],
       "Reducers/*": ["src/Modules/Reducers/*"],
-      "Modules/*": ["src/Modules/*"],
+      "Modules/*": ["src/Modules/*"]
     }
   }
 }
