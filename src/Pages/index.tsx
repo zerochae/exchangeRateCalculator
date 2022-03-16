@@ -1,4 +1,4 @@
-import * as S from "Pages/Main/style.Main";
+import * as S from "Pages/style";
 import * as C from "Constants/index";
 import * as T from "Types/index";
 
@@ -9,7 +9,7 @@ import useSetData from "Utils/useSetData";
 
 import ItemContainer from "Components/ItemContainer/index.ItemContainer";
 
-const Main = () => {
+const Index = () => {
   const fetchData: T.ExchangeData = useFetch(C.URL);
 
   const exChange = {
@@ -29,4 +29,4 @@ const Main = () => {
   );
 };
 
-export default Main;
+export default Index;

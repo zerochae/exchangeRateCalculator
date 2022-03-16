@@ -1,5 +1,4 @@
 import * as S from "Components/Item/style.Item";
-import * as C from "Constants/index";
 
 import Select from "Components/Select/index.Select";
 
