@@ -1,10 +1,8 @@
 import * as S from "Components/Item/style.Item";
-import * as A from "Actions/select";
+import * as A from "Actions/index";
 import * as C from "Constants/index";
 
 import Select from "Components/Select/index.Select";
-
-import useCalculate from "Utils/useCalculate";
 
 import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "Modules/index";
@@ -18,22 +16,23 @@ interface ItemProps {
 const Item = ({ optionKey, menu, index }: ItemProps): JSX.Element => {
   const dispatch = useDispatch();
 
-  const sender = useSelector((state: RootState) => state.select.sender);
   const receiver = useSelector((state: RootState) => state.select.receiver);
 
-  console.log(sender, receiver);
-
   const handleSender = (diff: string) => {
-    dispatch(A.selectSender(diff));
+    dispatch(A.setSender(diff));
   };
 
   const handleReceiver = (diff: string) => {
-    dispatch(A.selectReceiver(diff));
+    dispatch(A.setReceiver(diff));
+  };
+
+  const handleInput = (diff: string) => {
+    dispatch(A.setInput(diff));
   };
 
   return (
     <S.Container>
-      {menu}:
+      <span>{menu}:</span>
       {index < 2 && (
         <Select
           optionKey={optionKey}
@@ -41,7 +40,14 @@ const Item = ({ optionKey, menu, index }: ItemProps): JSX.Element => {
           handleReceiver={handleReceiver}
         />
       )}
-      {index === 2 && C.RECEIVER[receiver].price.toFixed(2)}
+      {index === 2 && <span>{C.RECEIVER[receiver].price.toFixed(2)}</span>}
+      {index === 3 && (
+        <input
+          onChange={(e) => {
+            handleInput(e.target.value);
+          }}
+        ></input>
+      )}
     </S.Container>
   );
 };

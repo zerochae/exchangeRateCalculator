@@ -1,4 +1,4 @@
-import * as A from "Actions/select";
+import * as A from "Actions/index";
 import * as C from "Constants/index";
 
 type SelectState = {
@@ -7,8 +7,8 @@ type SelectState = {
 };
 
 type SelectAction =
-  | ReturnType<typeof A.selectSender>
-  | ReturnType<typeof A.selectReceiver>;
+  | ReturnType<typeof A.setSender>
+  | ReturnType<typeof A.setReceiver>;
 
 const initialState: SelectState = {
   sender: C.EN_COUNTRIES.US,
@@ -17,9 +17,9 @@ const initialState: SelectState = {
 
 const select = (state: SelectState = initialState, action: SelectAction) => {
   switch (action.type) {
-    case A.SELECTSENDER:
+    case A.SETSENDER:
       return { ...state, sender: action.payload };
-    case A.SELECTRECEIVER:
+    case A.SETRECEIVER:
       return { ...state, receiver: action.payload };
     default:
       return state;

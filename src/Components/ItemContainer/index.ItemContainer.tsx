@@ -3,6 +3,7 @@ import * as C from "Constants/index";
 
 import Item from "Components/Item/index.Item";
 import Button from "Components/Button/index.Button";
+import Alert from "Components/Alert/index.Alert";
 
 const ItemContainer = (): JSX.Element => {
   return (
@@ -20,6 +21,7 @@ const ItemContainer = (): JSX.Element => {
           );
         })}
         <Button />
+        <Alert />
       </S.Container>
     </>
   );

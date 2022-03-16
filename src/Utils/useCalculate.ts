@@ -1,20 +1,18 @@
 import { useState, useEffect } from "react";
 
-const useCalculate = (price: number, exchange: number) => {
+const useCalculate = (price: number, receiver: number, sender: number) => {
   const [data, setData] = useState<string>("");
-  // const isNumber = /[0-9]/;
 
   useEffect(() => {
-    const calculateData = (price: number, exchange: number) => {
+    const calculateData = (price: number, receiver: number, sender: number) => {
       setData(
-        (price * exchange)
+        (price * (receiver / sender))
           .toFixed(2)
           .toString()
           .replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",")
       );
     };
-    // isNumber.test(String(price) + String(exchange)) &&
-    calculateData(price, exchange);
+    calculateData(price, receiver, sender);
   });
 
   return data;

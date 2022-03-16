@@ -1,5 +1,4 @@
 import * as S from "Components/Option/style.Option";
-import * as C from "Constants/index";
 
 interface OptionProps {
   option: string;

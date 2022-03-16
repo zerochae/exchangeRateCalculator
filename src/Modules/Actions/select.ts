@@ -1,13 +1,12 @@
-export const SELECTSENDER = "select/SELECTSENDER" as const;
+export const SETSENDER = "select/SETSENDER" as const;
+export const SETRECEIVER = "select/SETRECEIVER" as const;
 
-export const SELECTRECEIVER = "select/SELECTRECEIVER" as const;
-
-export const selectSender = (diff: string) => ({
-  type: SELECTSENDER,
+export const setSender = (diff: string) => ({
+  type: SETSENDER,
   payload: diff,
 });
 
-export const selectReceiver = (diff: string) => ({
-  type: SELECTRECEIVER,
+export const setReceiver = (diff: string) => ({
+  type: SETRECEIVER,
   payload: diff,
 });
