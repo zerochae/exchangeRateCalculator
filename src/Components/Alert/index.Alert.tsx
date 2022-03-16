@@ -5,25 +5,33 @@ import { RootState } from "Modules/index";
 import { useSelector } from "react-redux";
 
 import useCalculate from "Utils/useCalculate";
+import { useEffect, useState } from "react";
 
 const Alert = () => {
+
   const input = useSelector((state: RootState) => state.input.price);
   const sender = useSelector((state: RootState) => state.select.sender);
   const receiver = useSelector((state: RootState) => state.select.receiver);
+  const isClick = useSelector((state: RootState) => state.button.isClick);
+  const isFirst = useSelector((state: RootState) => state.button.isFirst);
+  
+  const [result, setResult] = useState("");
 
-  const result = useCalculate(
+  const calResult = useCalculate(
     parseInt(input),
     C.RECEIVER[receiver].price,
     C.SENDER[sender].price
   );
 
-  return (
-    <S.Container>
-      <p>
-        수취금액은 {result} {C.RECEIVER[receiver].currency} 입니다.
-      </p>
-    </S.Container>
-  );
+  useEffect(() => {
+    calResult !== "NaN"
+      ? setResult(
+          `${C.OUTPUT.START} ${calResult} ${C.RECEIVER[receiver].currency} ${C.OUTPUT.END}`
+        )
+      : setResult(C.OUTPUT.ERR);
+  }, [isClick]);
+
+  return <S.Container>{isFirst && <p>{result}</p>}</S.Container>;
 };
 
 export default Alert;
