@@ -3,9 +3,11 @@ import * as C from "Constants/index";
 import * as T from "Types/index";
 
 import GlobalStyle from "Styles/GlobalStyle";
+
 import useFetch from "Utils/useFetch";
 import useSetData from "Utils/useSetData";
-// import useCalculate from "Utils/useCalculate";
+
+import ItemContainer from "Components/ItemContainer/index.ItemContainer";
 
 const Main = () => {
   const fetchData: T.ExchangeData = useFetch(C.URL);
@@ -17,12 +19,12 @@ const Main = () => {
 
   console.log(exChange);
 
-  // const exChange = useCalculate(0, 0);
-
   return (
     <>
       <GlobalStyle />
-      <S.Container></S.Container>
+      <S.Container>
+        <ItemContainer />
+      </S.Container>
     </>
   );
 };
