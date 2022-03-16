@@ -19,9 +19,9 @@ const Alert = () => {
 
   return (
     <S.Container>
-      <span>
+      <p>
         수취금액은 {result} {C.RECEIVER[receiver].currency} 입니다.
-      </span>
+      </p>
     </S.Container>
   );
 };

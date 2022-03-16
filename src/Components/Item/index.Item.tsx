@@ -51,11 +51,14 @@ const Item = ({ optionKey, menu, index }: ItemProps): JSX.Element => {
         </span>
       )}
       {index === 3 && (
-        <input
-          onChange={(e) => {
-            handleInput(e.target.value);
-          }}
-        ></input>
+        <>
+          <input
+            onChange={(e) => {
+              handleInput(e.target.value);
+            }}
+          ></input>
+          <span>{C.SENDER.US.currency}</span>
+        </>
       )}
     </S.Container>
   );
