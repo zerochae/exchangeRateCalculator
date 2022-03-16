@@ -16,7 +16,12 @@ interface ItemProps {
 const Item = ({ optionKey, menu, index }: ItemProps): JSX.Element => {
   const dispatch = useDispatch();
 
+  const sender = useSelector((state: RootState) => state.select.sender);
   const receiver = useSelector((state: RootState) => state.select.receiver);
+
+  const setRate = (sender: number, receiver: number) => {
+    return (sender / receiver).toFixed(2);
+  };
 
   const handleSender = (diff: string) => {
     dispatch(A.setSender(diff));
@@ -40,7 +45,11 @@ const Item = ({ optionKey, menu, index }: ItemProps): JSX.Element => {
           handleReceiver={handleReceiver}
         />
       )}
-      {index === 2 && <span>{C.RECEIVER[receiver].price.toFixed(2)}</span>}
+      {index === 2 && (
+        <span>
+          {setRate(C.RECEIVER[receiver].price, C.SENDER[sender].price)}
+        </span>
+      )}
       {index === 3 && (
         <input
           onChange={(e) => {
