@@ -8,7 +8,7 @@ interface ItemProps {
   optionKey: string;
 }
 
-const Item = ({ optionKey, menu, index }: ItemProps) => {
+const Item = ({ optionKey, menu, index }: ItemProps): JSX.Element => {
   return (
     <S.Container>
       {menu}

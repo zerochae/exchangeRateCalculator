@@ -7,7 +7,7 @@ interface SelectProps {
   optionKey: string;
 }
 
-const Select = ({ optionKey }: SelectProps) => {
+const Select = ({ optionKey }: SelectProps): JSX.Element => {
   return (
     <S.Container>
       {Object.keys(C.OPTIONS[optionKey]).map((country, index) => {

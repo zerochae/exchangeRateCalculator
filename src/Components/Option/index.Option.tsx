@@ -4,7 +4,7 @@ interface OptionProps {
   option: string;
 }
 
-const Option = ({ option }: OptionProps) => {
+const Option = ({ option }: OptionProps): JSX.Element => {
   return <S.Container>{option}</S.Container>;
 };
 

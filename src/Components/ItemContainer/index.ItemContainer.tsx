@@ -4,7 +4,7 @@ import * as C from "Constants/index";
 import Item from "Components/Item/index.Item";
 import Button from "Components/Button/index.Button";
 
-const ItemContainer = () => {
+const ItemContainer = (): JSX.Element => {
   return (
     <>
       <S.Container>
