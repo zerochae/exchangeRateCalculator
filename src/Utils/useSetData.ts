@@ -12,16 +12,16 @@ const useSetData = (
   useEffect(() => {
     const setFetchData = () => {
       if (fetchData) {
-        const newData = Object.keys(fetchData).reduce(
-          (result, key) => {
-            if (keys.includes(key))
-              result[key.slice(3, 5)].price = fetchData[key];
-            return result;
-          },
-          { ...obj }
+        setData(
+          Object.keys(fetchData).reduce(
+            (result, key) => {
+              if (keys.includes(key))
+                result[key.slice(3, 5)].price = fetchData[key];
+              return result;
+            },
+            { ...obj }
+          )
         );
-
-        if (newData) setData(newData);
       }
     };
     data === null && setFetchData();
