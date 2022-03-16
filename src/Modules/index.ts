@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
 import select from "Reducers/select";
 
-const rootReducers = combineReducers({
+const rootReducer = combineReducers({
   select,
 });
 
-export default rootReducers;
+export default rootReducer;
 
-export type RootState = ReturnType<typeof rootReducers>;
+export type RootState = ReturnType<typeof rootReducer>;

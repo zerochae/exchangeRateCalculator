@@ -5,18 +5,16 @@ import GlobalStyle from "Styles/GlobalStyle";
 
 import { Provider } from "react-redux";
 import { createStore } from "redux";
-import rootReducers from "Modules/index";
+import rootReducer from "Modules/index";
 
 import App from "Pages/index";
 
-const store = createStore(rootReducers);
+const store = createStore(rootReducer);
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <GlobalStyle />
-      <App />
-    </Provider>
-  </React.StrictMode>,
+  <Provider store={store}>
+    <GlobalStyle />
+    <App />
+  </Provider>,
   document.getElementById("root")
 );

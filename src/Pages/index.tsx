@@ -7,8 +7,10 @@ import useSetData from "Utils/useSetData";
 
 import ItemContainer from "Components/ItemContainer/index.ItemContainer";
 
+
 const Index = (): JSX.Element => {
   const fetchData: T.ExchangeData = useFetch(C.URL);
+
 
   const exChange: { [key: string]: T.Selects | null } = {
     sender: useSetData(fetchData, C.SENDERKEYS, C.SENDER),

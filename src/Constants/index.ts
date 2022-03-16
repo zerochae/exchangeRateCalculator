@@ -16,12 +16,25 @@ const COUNTRIES: T.Nations = {
   PH: "필리핀",
 };
 
+export const EN_COUNTRIES: T.Nations = {
+  US: "US",
+  AU: "AU",
+  KR: "KR",
+  JP: "JP",
+  PH: "PH",
+};
+
 const CURRENCIES: T.Nations = {
   US: "USD",
   AU: "AUD",
   KR: "KRW",
   JP: "JPY",
   PH: "PHP",
+};
+
+export const ROLE: { [key: string]: string } = {
+  SENDER: "SENDER",
+  RECEIVER: "RECEIVER",
 };
 
 export const SENDERKEYS: string[] = ["USDAUD"];
@@ -31,13 +44,13 @@ export const RECEIVERKEYS: string[] = ["USDKRW", "USDJPY", "USDPHP"];
 export const SENDER: T.Selects = {
   US: {
     id: 1,
-    country: COUNTRIES.US,
+    country: EN_COUNTRIES.US,
     currency: CURRENCIES.US,
     price: 1,
   },
   AU: {
     id: 2,
-    country: COUNTRIES.AU,
+    country: EN_COUNTRIES.AU,
     currency: CURRENCIES.AU,
     price: 0,
   },
@@ -46,19 +59,19 @@ export const SENDER: T.Selects = {
 export const RECEIVER: T.Selects = {
   KR: {
     id: 1,
-    country: COUNTRIES.KR,
+    country: EN_COUNTRIES.KR,
     currency: CURRENCIES.KR,
     price: 0,
   },
   JP: {
     id: 2,
-    country: COUNTRIES.JP,
+    country: EN_COUNTRIES.JP,
     currency: CURRENCIES.JP,
     price: 0,
   },
   PH: {
     id: 3,
-    country: COUNTRIES.PH,
+    country: EN_COUNTRIES.PH,
     currency: CURRENCIES.PH,
     price: 0,
   },

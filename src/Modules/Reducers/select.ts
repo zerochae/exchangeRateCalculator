@@ -1,4 +1,5 @@
 import * as A from "Actions/select";
+import * as C from "Constants/index";
 
 type SelectState = {
   sender: string;
@@ -10,16 +11,16 @@ type SelectAction =
   | ReturnType<typeof A.selectReceiver>;
 
 const initialState: SelectState = {
-  sender: "",
-  receiver: "",
+  sender: C.EN_COUNTRIES.US,
+  receiver: C.EN_COUNTRIES.KR,
 };
 
 const select = (state: SelectState = initialState, action: SelectAction) => {
   switch (action.type) {
     case A.SELECTSENDER:
-      return { sender: action.payload };
+      return { ...state, sender: action.payload };
     case A.SELECTRECEIVER:
-      return { receiver: action.payload };
+      return { ...state, receiver: action.payload };
     default:
       return state;
   }
