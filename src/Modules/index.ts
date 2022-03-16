@@ -1,7 +1,6 @@
 import { combineReducers } from "redux";
 
-import input from "Reducers/input";
-import select from "Reducers/select";
+import { input, select } from "Reducers/index";
 
 const rootReducer = combineReducers({
   input,

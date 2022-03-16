@@ -10,12 +10,8 @@ import ItemContainer from "Components/ItemContainer/index.ItemContainer";
 const Index = (): JSX.Element => {
   const fetchData: T.ExchangeData = useFetch(C.URL);
 
-  const exChange: { [key: string]: T.Selects | null } = {
-    sender: useSetData(fetchData, C.SENDERKEYS, C.SENDER),
-    receiver: useSetData(fetchData, C.RECEIVERKEYS, C.RECEIVER),
-  };
-
-  console.log(exChange);
+  useSetData(fetchData, C.SENDERKEYS, C.SENDER);
+  useSetData(fetchData, C.RECEIVERKEYS, C.RECEIVER);
 
   return (
     <>
