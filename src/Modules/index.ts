@@ -1,6 +1,9 @@
 import { combineReducers } from "redux";
+import select from "Reducers/select";
 
-const rootReducers = combineReducers({});
+const rootReducers = combineReducers({
+  select,
+});
 
 export default rootReducers;
 
