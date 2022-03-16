@@ -120,4 +120,5 @@ export const OUTPUT = {
   START: "수취금액은",
   END: "입니다",
   ERR: "잘못된 입력입니다.",
+  NAN: "NaN",
 };

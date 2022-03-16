@@ -8,13 +8,12 @@ import useCalculate from "Utils/useCalculate";
 import { useEffect, useState } from "react";
 
 const Alert = () => {
-
   const input = useSelector((state: RootState) => state.input.price);
   const sender = useSelector((state: RootState) => state.select.sender);
   const receiver = useSelector((state: RootState) => state.select.receiver);
   const isClick = useSelector((state: RootState) => state.button.isClick);
   const isFirst = useSelector((state: RootState) => state.button.isFirst);
-  
+
   const [result, setResult] = useState("");
 
   const calResult = useCalculate(
@@ -24,7 +23,7 @@ const Alert = () => {
   );
 
   useEffect(() => {
-    calResult !== "NaN"
+    calResult !== C.OUTPUT.NAN
       ? setResult(
           `${C.OUTPUT.START} ${calResult} ${C.RECEIVER[receiver].currency} ${C.OUTPUT.END}`
         )
