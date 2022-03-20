@@ -10,13 +10,13 @@ import ItemContainer from "Components/ItemContainer/index.ItemContainer";
 const Index = (): JSX.Element => {
   const fetchData: T.ExchangeData = useFetch(C.URL);
 
-  useSetData(fetchData, C.SENDERKEYS, C.SENDER);
-  useSetData(fetchData, C.RECEIVERKEYS, C.RECEIVER);
+  const sendData = useSetData(fetchData, C.SENDERKEYS, C.SENDER);
+  const receiveData = useSetData(fetchData, C.RECEIVERKEYS, C.RECEIVER);
 
   return (
     <>
       <S.Container>
-        <ItemContainer />
+        <ItemContainer sendData={sendData} receiveData={receiveData} />
       </S.Container>
     </>
   );

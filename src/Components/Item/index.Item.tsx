@@ -1,6 +1,7 @@
 import * as S from "Components/Item/style.Item";
 import * as A from "Actions/index";
 import * as C from "Constants/index";
+import * as T from "Types/index";
 
 import Select from "Components/Select/index.Select";
 
@@ -11,9 +12,17 @@ interface ItemProps {
   menu: string;
   index: number;
   optionKey: string;
+  sendData: T.Selects | null;
+  receiveData: T.Selects | null;
 }
 
-const Item = ({ optionKey, menu, index }: ItemProps): JSX.Element => {
+const Item = ({
+  optionKey,
+  menu,
+  index,
+  sendData,
+  receiveData,
+}: ItemProps): JSX.Element => {
   const dispatch = useDispatch();
 
   const sender = useSelector((state: RootState) => state.select.sender);
@@ -47,7 +56,9 @@ const Item = ({ optionKey, menu, index }: ItemProps): JSX.Element => {
       )}
       {index === 2 && (
         <span>
-          {setRate(C.RECEIVER[receiver].price, C.SENDER[sender].price)}
+          {receiveData &&
+            sendData &&
+            setRate(receiveData[receiver].price, sendData[sender].price)}
         </span>
       )}
       {index === 3 && (
@@ -57,7 +68,7 @@ const Item = ({ optionKey, menu, index }: ItemProps): JSX.Element => {
               handleInput(e.target.value);
             }}
           ></input>
-          <span>{C.SENDER.US.currency}</span>
+          <span>{sendData && sendData[C.EN_COUNTRIES.US].currency}</span>
         </>
       )}
     </S.Container>

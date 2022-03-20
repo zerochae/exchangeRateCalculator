@@ -1,6 +1,7 @@
 import * as S from "Components/ItemContainer/style.ItemContainer";
 import * as C from "Constants/index";
 import * as A from "Actions/index";
+import * as T from "Types/index";
 
 import Item from "Components/Item/index.Item";
 import Button from "Components/Button/index.Button";
@@ -8,7 +9,15 @@ import Alert from "Components/Alert/index.Alert";
 
 import { useDispatch } from "react-redux";
 
-const ItemContainer = (): JSX.Element => {
+interface ItemContainerProps {
+  sendData: T.Selects | null;
+  receiveData: T.Selects | null;
+}
+
+const ItemContainer = ({
+  sendData,
+  receiveData,
+}: ItemContainerProps): JSX.Element => {
   const dispatch = useDispatch();
 
   const handleClick = () => {
@@ -26,6 +35,8 @@ const ItemContainer = (): JSX.Element => {
               key={C.MENU[key].id}
               index={index}
               menu={C.MENU[key].title}
+              sendData={sendData}
+              receiveData={receiveData}
             />
           );
         })}
