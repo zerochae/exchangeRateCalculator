@@ -1,5 +1,6 @@
 import * as S from "Components/Alert/style.Alert";
 import * as C from "Constants/index";
+import * as T from "Types/index";
 
 import { RootState } from "Modules/index";
 import { useSelector } from "react-redux";
@@ -7,7 +8,12 @@ import { useSelector } from "react-redux";
 import useCalculate from "Utils/useCalculate";
 import { useEffect, useState } from "react";
 
-const Alert = (): JSX.Element => {
+interface AlertProps {
+  sendData: T.Selects;
+  receiveData: T.Selects;
+}
+
+const Alert = ({ sendData, receiveData }: AlertProps): JSX.Element => {
   const input = useSelector((state: RootState) => state.input.price);
   const sender = useSelector((state: RootState) => state.select.sender);
   const receiver = useSelector((state: RootState) => state.select.receiver);
@@ -18,17 +24,19 @@ const Alert = (): JSX.Element => {
 
   const calResult: string = useCalculate(
     parseInt(input),
-    C.RECEIVER[receiver].price,
-    C.SENDER[sender].price
+    receiveData[receiver].price,
+    sendData[sender].price
   );
 
   useEffect(() => {
     calResult !== C.OUTPUT.NAN
       ? setResult(
-          `${C.OUTPUT.START} ${calResult} ${C.RECEIVER[receiver].currency} ${C.OUTPUT.END}`
+          `${C.OUTPUT.START} ${calResult} ${
+            receiveData && receiveData[receiver].currency
+          } ${C.OUTPUT.END}`
         )
       : setResult(C.OUTPUT.ERR);
-  }, [isClick]);
+  }, [isClick, calResult, receiver]);
 
   return <S.Container>{isFirst && <p>{result}</p>}</S.Container>;
 };

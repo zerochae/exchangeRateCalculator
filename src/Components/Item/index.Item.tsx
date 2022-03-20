@@ -12,8 +12,8 @@ interface ItemProps {
   menu: string;
   index: number;
   optionKey: string;
-  sendData: T.Selects | null;
-  receiveData: T.Selects | null;
+  sendData: T.Selects;
+  receiveData: T.Selects;
 }
 
 const Item = ({

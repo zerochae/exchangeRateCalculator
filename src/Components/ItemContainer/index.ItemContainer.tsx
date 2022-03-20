@@ -30,18 +30,24 @@ const ItemContainer = ({
         <h1>{C.TITLE}</h1>
         {Object.keys(C.MENU).map((key, index) => {
           return (
-            <Item
-              optionKey={Object.keys(C.OPTIONS)[index]}
-              key={C.MENU[key].id}
-              index={index}
-              menu={C.MENU[key].title}
-              sendData={sendData}
-              receiveData={receiveData}
-            />
+            <>
+              {sendData && receiveData && (
+                <Item
+                  optionKey={Object.keys(C.OPTIONS)[index]}
+                  key={C.MENU[key].id}
+                  index={index}
+                  menu={C.MENU[key].title}
+                  sendData={sendData}
+                  receiveData={receiveData}
+                />
+              )}
+            </>
           );
         })}
         <Button handleClick={handleClick} />
-        <Alert />
+        {sendData && receiveData && (
+          <Alert sendData={sendData} receiveData={receiveData} />
+        )}
       </S.Container>
     </>
   );

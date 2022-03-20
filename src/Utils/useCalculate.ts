@@ -5,6 +5,8 @@ const useCalculate = (price: number, receiver: number, sender: number) => {
 
   useEffect(() => {
     const calculateData = (price: number, receiver: number, sender: number) => {
+      if (price < 0) return NaN;
+
       setData(
         (price * (receiver / sender))
           .toFixed(2)
