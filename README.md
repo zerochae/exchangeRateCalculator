@@ -7,7 +7,7 @@
 ## 실행 방법
 
 ```
-git clone https://github.com/zerochae/exchangeRateCalculator
+git clone https://github.com/zerochae/exchangeRateCalculator.git
 
 npm install
 
