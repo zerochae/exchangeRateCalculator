@@ -34,6 +34,6 @@ npm run dev
 
 ![image](https://user-images.githubusercontent.com/84373490/159194789-79296c07-6504-4c6a-9335-5ad09b7faddb.png)
 
-지금까지 잘 API 데이터를 Fetch 했지만, 오늘 갑자기 되지 않는 현상이 있었습니다. 
+지금까지 문제없이 API 데이터를 Fetch 했지만, 오늘(2022-03-21 10:00경) 갑자기 되지 않는 현상이 있었습니다. 
 
 여러 시도를 해보았지만, 계속 어려움이 있었고, 결국 `json-server`를 사용하여 대체하였습니다. 
