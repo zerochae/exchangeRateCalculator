@@ -25,10 +25,12 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "start": "concurrently \"craco start\" \"npx json-server db.json --port 8080\"",
+    "start":"node server.js",
+    "dev": "concurrently \"craco start\" \"npx json-server db.json --port 8080\"",
     "build": "craco build",
     "test": "craco test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "craco build"
   },
   "eslintConfig": {
     "extends": [
