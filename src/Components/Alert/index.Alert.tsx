@@ -36,7 +36,7 @@ const Alert = ({ sendData, receiveData }: AlertProps): JSX.Element => {
           } ${C.OUTPUT.END}`
         )
       : setResult(C.OUTPUT.ERR);
-  }, [isClick, calResult, receiver]);
+  }, [isClick]);
 
   return <S.Container>{isFirst && <p>{result}</p>}</S.Container>;
 };
