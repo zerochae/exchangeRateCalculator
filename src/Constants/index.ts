@@ -78,7 +78,7 @@ export const RECEIVER: T.Selects = {
 };
 
 export const URL: string =
-  "http://api.currencylayer.com/live?access_key=7b98a0ab1702bf822960c839e7a61e57&format=1&format=1";
+  "https://api.currencylayer.com/live?access_key=c3496e3b72c4325a0fd4ee717b12ff21&format=1";
 
 export const TITLE: string = STRINGS.TITLE;
 
