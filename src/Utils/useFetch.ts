@@ -10,7 +10,8 @@ const useFetch = (url: string) => {
       try {
         const res = await fetch(url);
         const data = await res.json();
-        if (data) setData(data.quotes);
+        console.log(data);
+        if (data) setData(data);
       } catch (err) {
         console.log(err);
       }
