@@ -68,7 +68,7 @@ const Item = ({
               handleInput(e.target.value);
             }}
           ></input>
-          <span>{`${sender}D`}</span>
+          <span>{sendData[sender].currency}</span>
         </>
       )}
     </S.Container>
