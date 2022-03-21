@@ -10,8 +10,8 @@ import Alert from "Components/Alert/index.Alert";
 import { useDispatch } from "react-redux";
 
 interface ItemContainerProps {
-  sendData: T.Selects | null;
-  receiveData: T.Selects | null;
+  sendData: T.Selects;
+  receiveData: T.Selects;
 }
 
 const ItemContainer = ({
@@ -30,18 +30,14 @@ const ItemContainer = ({
         <h1>{C.TITLE}</h1>
         {Object.keys(C.MENU).map((key, index) => {
           return (
-            <>
-              {sendData && receiveData && (
-                <Item
-                  optionKey={Object.keys(C.OPTIONS)[index]}
-                  key={C.MENU[key].id}
-                  index={index}
-                  menu={C.MENU[key].title}
-                  sendData={sendData}
-                  receiveData={receiveData}
-                />
-              )}
-            </>
+              <Item
+                optionKey={Object.keys(C.OPTIONS)[index]}
+                key={C.MENU[key].id}
+                index={index}
+                menu={C.MENU[key].title}
+                sendData={sendData}
+                receiveData={receiveData}
+              />
           );
         })}
         <Button handleClick={handleClick} />

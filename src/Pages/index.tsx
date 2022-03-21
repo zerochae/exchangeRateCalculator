@@ -16,7 +16,9 @@ const Index = (): JSX.Element => {
   return (
     <>
       <S.Container>
-        <ItemContainer sendData={sendData} receiveData={receiveData} />
+        {sendData && receiveData && (
+          <ItemContainer sendData={sendData} receiveData={receiveData} />
+        )}
       </S.Container>
     </>
   );
