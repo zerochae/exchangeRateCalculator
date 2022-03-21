@@ -78,7 +78,7 @@ export const RECEIVER: T.Selects = {
 };
 
 export const URL: string =
-  "http://localhost:8080/quotes";
+  "https://exchangecal-zerochae.herokuapp.com/quotes";
 
 export const TITLE: string = STRINGS.TITLE;
 
