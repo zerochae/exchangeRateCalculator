@@ -36,6 +36,7 @@ const Alert = ({ sendData, receiveData }: AlertProps): JSX.Element => {
           } ${C.OUTPUT.END}`
         )
       : setResult(C.OUTPUT.ERR);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isClick]);
 
   return <S.Container>{isFirst && <p>{result}</p>}</S.Container>;
